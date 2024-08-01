@@ -1,5 +1,6 @@
 class UserModel {
   final String uid;
+  final String? userImg;
   final String? name;
   final String? email;
   final String? imageUrl;
@@ -12,13 +13,13 @@ class UserModel {
   final String? diet;
   final String? condition;
 
-  UserModel({this.imageUrl,this.name,this.email,required this.uid,this.petName,
+  UserModel({this.userImg,this.imageUrl,this.name,this.email,required this.uid,this.petName,
     this.gender,this.type, this.breed, this.age, this.weight, this.diet,
     this.condition,});
 
   // Convert User object to a Map<String, dynamic>
   Map<String, dynamic> toJson() {
-    return {'name': name,'email': email,'uid':uid,'petName': petName,
+    return {'userImg':userImg,'name': name,'email': email,'uid':uid,'petName': petName,
       'gender': gender,'type': type,'breed' :breed,'age' :age,
       'weight' :weight, 'diet':diet, 'condition':condition,};
   }
@@ -28,6 +29,7 @@ class UserModel {
     return UserModel(
 
       name: json['name'],
+      userImg: json['userImg'],
       email: json['email'],
       uid: json['uid'],
       imageUrl: json['imageUrl'],

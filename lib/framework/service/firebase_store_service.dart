@@ -41,6 +41,7 @@ class FireStoreService {
       'weight':user.weight,
       'diet':user.diet,
       'condition':user.condition,
+      'userImg':user.userImg,
 
     });  }
 

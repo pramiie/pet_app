@@ -65,14 +65,34 @@ class PetProfileController extends ChangeNotifier{
     selectedDiet = diet;
     notifyListeners();
   }
+  File? userImage;
+  String? userFileName;
+  pickImageUser(BuildContext context) async {
+    final result = await FilePicker.platform.pickFiles(
+        allowMultiple: false,
+        type: FileType.custom,
+        allowedExtensions: ['jpg', 'png']);
+    if (result != null) {
+      final userFileName = result.files.single.name;
+      this.userFileName = userFileName;
+      userImage = File(result.files.single.path!);
+      notifyListeners();
+    } else {
+      if (context.mounted) {
+      }
+    }
+    notifyListeners();
+  }
 
   onNextButtonSubmit(BuildContext context) async  {
     final imgUrl = await FirebaseStorage.firebaseStorage
         .upLoadImage(context, selectedImage!)??" ";
+    final userImgUrl = await FirebaseStorage.firebaseStorage
+        .upLoadUserImage(context, userImage!)??" ";
     //final userEmail = FirebaseSingleTon.firebaseSingleTon.firebaseAuth.currentUser!.email;
     final uid = FirebaseSingleTon.firebaseSingleTon.firebaseAuth.currentUser!.uid;
 
-    final user = UserModel(imageUrl:imgUrl, uid:uid,petName:petNameCon.text,gender: selectedGender,
+    final user = UserModel(userImg:userImgUrl,imageUrl:imgUrl, uid:uid,petName:petNameCon.text,gender: selectedGender,
       type:selectedPetType, breed: breedCon.text,age: ageController.text,weight: weightController.text,
    diet:selectedDiet, condition: conditionController.text);
      await FireStoreService.fireStoreService.updateUserToFirebase(user: user);

@@ -22,4 +22,16 @@ class FirebaseStorage {
       return Future.error(e.message.toString());
     }
     }
+  Future<String> upLoadUserImage(
+      BuildContext context, File file) async {
+    try {
+      final baseName = basename(file.path);
+      final imgRef = FirebaseSingleTon.firebaseSingleTon.firebaseStorage
+          .ref('petProfile1/$baseName');
+      await imgRef.putFile(file);
+      return imgRef.getDownloadURL();
+    } on FirebaseAuthException catch (e) {
+      return Future.error(e.message.toString());
+    }
+  }
 }

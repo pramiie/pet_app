@@ -53,7 +53,6 @@ class PetProfile1 extends ConsumerWidget {
               GestureDetector(
                 onTap: (){
                   petProfileWatch.pickImageFile(context);
-                  //petProfileWatch.onNextButtonSubmit(context);
 
                 },
                   child: petProfileWatch.selectedImage==null?ContainerProfile(data: 'Add Photo', height: 111.h, width: 122.w,):
