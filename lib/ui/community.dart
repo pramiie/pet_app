@@ -11,6 +11,7 @@ class Community extends StatelessWidget {
           padding:EdgeInsets.all(25.w),
           child: Column(
             children: [
+              SizedBox(height: 20.h,),
               CommonTextfield(hintText: "Search",width: double.infinity,
                 prefixIcon: Image.asset("assets/searchicon.png"),
                 suffixIcon: Image.asset("assets/sliders.png"),),

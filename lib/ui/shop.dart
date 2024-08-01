@@ -24,6 +24,7 @@ class _ShopPageState extends State<ShopPage> {
           padding:EdgeInsets.all(25.w),
           child: Column(
             children: [
+              SizedBox(height: 20.h,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
