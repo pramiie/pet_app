@@ -41,28 +41,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAbiyYqNWC--UxsBo7PacgfNLoN431FTXM',
-    appId: '1:805130321697:web:1fde88bfd0d157f95d0860',
-    messagingSenderId: '805130321697',
-    projectId: 'petapp-d64b6',
-    authDomain: 'petapp-d64b6.firebaseapp.com',
-    storageBucket: 'petapp-d64b6.appspot.com',
+    apiKey: 'AIzaSyAAu0fuB7uOTRHHeJUkBj9opBb4FTC-cFo',
+    appId: '1:8706951967:web:9356685ae9dd48ca5a3e2a',
+    messagingSenderId: '8706951967',
+    projectId: 'petapp2-cdec9',
+    authDomain: 'petapp2-cdec9.firebaseapp.com',
+    storageBucket: 'petapp2-cdec9.appspot.com',
+    measurementId: 'G-PXJB7LDK23',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBztFh5akiW9rETFrp5KdWG2pwjLSA7uTM',
-    appId: '1:805130321697:android:a10b1f07b6c42cef5d0860',
-    messagingSenderId: '805130321697',
-    projectId: 'petapp-d64b6',
-    storageBucket: 'petapp-d64b6.appspot.com',
+    apiKey: 'AIzaSyBpAhzM9JE9lAoAUi0dm_ozjm1LRpNQjG8',
+    appId: '1:8706951967:android:66efb1ecfa00da855a3e2a',
+    messagingSenderId: '8706951967',
+    projectId: 'petapp2-cdec9',
+    storageBucket: 'petapp2-cdec9.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBAhaV2ObkUrwpTMgB5VjbAv3K9FRinhU8',
-    appId: '1:805130321697:ios:efcb22cc797ef8a55d0860',
-    messagingSenderId: '805130321697',
-    projectId: 'petapp-d64b6',
-    storageBucket: 'petapp-d64b6.appspot.com',
+    apiKey: 'AIzaSyDFcAysIMTUr5F5ynNBgLgltN56Ew7BEmA',
+    appId: '1:8706951967:ios:efba5b29a72633855a3e2a',
+    messagingSenderId: '8706951967',
+    projectId: 'petapp2-cdec9',
+    storageBucket: 'petapp2-cdec9.appspot.com',
     iosBundleId: 'com.example.petApp',
   );
 

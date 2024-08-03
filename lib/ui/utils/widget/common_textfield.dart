@@ -42,9 +42,9 @@ class CommonTextfield extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.r),
             borderSide: BorderSide(color: Color(0xFFE8E8E8).withOpacity(.8))),
-          errorBorder: OutlineInputBorder(
+         /* errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(color: Color(0xFFE8E8E8).withOpacity(.8))),
+              borderSide: BorderSide(color: Color(0xFFE8E8E8).withOpacity(.8))),*/
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.r),
                 borderSide: BorderSide(color: Color(0xFFE8E8E8).withOpacity(.8))),

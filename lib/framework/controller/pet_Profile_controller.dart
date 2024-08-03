@@ -32,14 +32,7 @@ class PetProfileController extends ChangeNotifier{
     }
     notifyListeners();
   }
-  /*String gender = "none";
-  void pickGender(int index){
-    if(index ==1){
-      gender ="Male";
-    }else{
-      gender = "Female";
-    }
-  }*/
+
   String selectedGender = '';
   void setGender(String gender) {
     selectedGender = gender;
@@ -65,7 +58,7 @@ class PetProfileController extends ChangeNotifier{
     selectedDiet = diet;
     notifyListeners();
   }
-  File? userImage;
+ /* File? userImage;
   String? userFileName;
   pickImageUser(BuildContext context) async {
     final result = await FilePicker.platform.pickFiles(
@@ -82,21 +75,35 @@ class PetProfileController extends ChangeNotifier{
       }
     }
     notifyListeners();
+  }*/
+//age
+  String? age;
+  int calculateAge(DateTime birthDate) {
+    DateTime today = DateTime.now();
+    int age = today.year - birthDate.year;
+
+    if (today.month < birthDate.month ||
+        (today.month == birthDate.month && today.day < birthDate.day)) {
+      age--;
+    }
+    this.age = age.toString();
+    notifyListeners();
+    return age;
   }
+
 
   onNextButtonSubmit(BuildContext context) async  {
     final imgUrl = await FirebaseStorage.firebaseStorage
         .upLoadImage(context, selectedImage!)??" ";
-    final userImgUrl = await FirebaseStorage.firebaseStorage
-        .upLoadUserImage(context, userImage!)??" ";
+   /* final userImgUrl = await FirebaseStorage.firebaseStorage
+        .upLoadUserImage(context, userImage!)??" ";*/
     //final userEmail = FirebaseSingleTon.firebaseSingleTon.firebaseAuth.currentUser!.email;
     final uid = FirebaseSingleTon.firebaseSingleTon.firebaseAuth.currentUser!.uid;
 
-    final user = UserModel(userImg:userImgUrl,imageUrl:imgUrl, uid:uid,petName:petNameCon.text,gender: selectedGender,
-      type:selectedPetType, breed: breedCon.text,age: ageController.text,weight: weightController.text,
-   diet:selectedDiet, condition: conditionController.text);
-     await FireStoreService.fireStoreService.updateUserToFirebase(user: user);
+    final user = UserModel(imageUrl:imgUrl, uid:uid,petName:petNameCon.text,gender: selectedGender,
+        type:selectedPetType, breed: breedCon.text,age: age,weight: weightController.text,
+        diet:selectedDiet, condition: conditionController.text);
+    await FireStoreService.fireStoreService.updateUserToFirebase(user: user);
     notifyListeners();
-    }
+  }
 }
-

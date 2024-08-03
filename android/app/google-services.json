@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "805130321697",
-    "project_id": "petapp-d64b6",
-    "storage_bucket": "petapp-d64b6.appspot.com"
+    "project_number": "8706951967",
+    "project_id": "petapp2-cdec9",
+    "storage_bucket": "petapp2-cdec9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:805130321697:android:a10b1f07b6c42cef5d0860",
+        "mobilesdk_app_id": "1:8706951967:android:66efb1ecfa00da855a3e2a",
         "android_client_info": {
           "package_name": "com.example.pet_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBztFh5akiW9rETFrp5KdWG2pwjLSA7uTM"
+          "current_key": "AIzaSyBpAhzM9JE9lAoAUi0dm_ozjm1LRpNQjG8"
         }
       ],
       "services": {
