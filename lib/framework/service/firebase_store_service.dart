@@ -7,7 +7,7 @@ class FireStoreService {
 
   static FireStoreService fireStoreService = FireStoreService._();
 
-  final uid = FirebaseAuth.instance.currentUser!.uid;
+
   Future<void> addUserToFirebase(UserModel user) async {
     FirebaseSingleTon.firebaseSingleTon.fireStore
         .collection('users')
@@ -47,6 +47,7 @@ class FireStoreService {
 
   
   Stream<UserModel> getUserStream() {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
     final user = FirebaseSingleTon.firebaseSingleTon.fireStore.collection("users")
         .doc(uid).snapshots().map((e) => UserModel.fromJson(e.data()!));
     return user;
