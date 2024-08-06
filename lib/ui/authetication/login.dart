@@ -7,9 +7,7 @@ import 'package:pet_app/ui/utils/widget/common_button.dart';
 import 'package:pet_app/ui/utils/widget/common_text.dart';
 import 'package:pet_app/ui/utils/widget/common_textfield.dart';
 import 'package:pet_app/ui/authetication/welcome.dart';
-
 import '../../framework/controller/login_controller.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends ConsumerWidget {
   const Login({super.key});

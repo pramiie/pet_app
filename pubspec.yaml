@@ -53,10 +53,6 @@ dev_dependencies:
   firebase_core:
   firebase_auth:
   cloud_firestore:
-  shared_preferences:
-  hive:
-  path_provider:
-  hive_flutter:
   firebase_storage:
   file_picker:
   cached_network_image:
