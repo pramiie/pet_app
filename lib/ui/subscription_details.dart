@@ -67,7 +67,7 @@ class _SubscriptionDetailsState extends State<SubscriptionDetails> {
                   color: Color(0XFF767676),fontSize: 14.sp,fontWeight: FontWeight.w600
               ),),
               SizedBox(height: 14.h,),
-              CommonTextfield(height:120.h,maxLines: 6,),
+              CommonTextfield(maxLines: 6,),
               SizedBox(height: 30.h,),
               Card(
                shadowColor: Color(0XFFE5E5E5),

@@ -33,47 +33,53 @@ class Register extends ConsumerWidget {
       body: Form(
         key: registerWatch.rKey,
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 16.h,),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 23.0, right: 16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 16.h,),
 
-              SizedBox(height: 32.h,),
-              CommonTextfield(hintText: "Name",controller: registerWatch.nameController,
-              validator: (value){
-                return  requiredFieldValidator(input: value, errorMgs: "please enter your name");
-              },),
-              SizedBox(height: 16.h,),
-              CommonTextfield(hintText: "Email",controller: registerWatch.emailController,validator: emailValidator,),
-              SizedBox(height: 16.h,),
-              CommonTextfield(hintText: "Password",suffixText: "Show",controller: registerWatch.passwordController  ,
-                validator: passValidator,),
+                SizedBox(height: 32.h,),
+                CommonTextfield(hintText: "Name",controller: registerWatch.nameController,
+                validator: (value){
+                  return  requiredFieldValidator(input: value, errorMgs: "please enter your name");
+                },),
+                SizedBox(height: 16.h,),
+                CommonTextfield(hintText: "Email",controller: registerWatch.emailController,validator: emailValidator,),
+                SizedBox(height: 16.h,),
+                CommonTextfield(hintText: "Password",obscureText: registerWatch.isShowHide,
+                  suffixIcon:TextButton(onPressed: (){
+                  registerWatch.updateIsShowHide();
+                }, child: CommonText(data: "Show")),controller: registerWatch.passwordController  ,
+                  validator: passValidator,),
 
-              SizedBox(height: 32.h),
-              Row(
-                children: [
-                  SizedBox(width: 8.w),
-                  Checkbox(value: false, onChanged: (bool? value) {  },checkColor: Color(0XFFF6F6F6),),
-                  Expanded(
-                    child: Text("I would like to receive your newsletter and other promotional information.",
-                    style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0XFF666666)),),
-                  )
-                ],
-              ),
-              SizedBox(height: 43.h),
+                SizedBox(height: 32.h),
+                Row(
+                  children: [
+                    SizedBox(width: 8.w),
+                    Checkbox(value: false, onChanged: (bool? value) {  },checkColor: Color(0XFFF6F6F6),),
+                    Expanded(
+                      child: Text("I would like to receive your newsletter and other promotional information.",
+                      style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0XFF666666)),),
+                    )
+                  ],
+                ),
+                SizedBox(height: 43.h),
 
-              InkWell(child: CommonButton(data:"Sign Up"),
-              onTap: (){
-                registerWatch.signUpButton(context);
-
-              },),
-              SizedBox(height: 16.h),
-              InkWell(child: CommonText(data: "Allready have an account?",),
+                InkWell(child: CommonButton(data:"Sign Up"),
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
-                },
-              ),
-            ],
+                  registerWatch.signUpButton(context);
+
+                },),
+                SizedBox(height: 16.h),
+                InkWell(child: CommonText(data: "Allready have an account?",),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -17,6 +17,12 @@ class RegisterController extends ChangeNotifier{
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  bool isShowHide = true;
+
+  updateIsShowHide(){
+    isShowHide = !isShowHide;
+    notifyListeners();
+  }
 
 
   signUpButton(BuildContext context)async{

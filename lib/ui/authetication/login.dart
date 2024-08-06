@@ -37,7 +37,7 @@ class Login extends ConsumerWidget {
         key: loginWatch.loginKey,
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 24.0, right: 16.0),
+            padding: const EdgeInsets.only(left: 23.0, right: 16.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -46,7 +46,10 @@ class Login extends ConsumerWidget {
                 CommonTextfield(hintText: "Email",validator: emailValidator,
                 controller: loginWatch.emailController,),
                 SizedBox(height: 16.h,),
-                CommonTextfield(hintText: "Password",suffixText: "Show",
+                CommonTextfield(hintText: "Password",obscureText:loginWatch.isShowHide,
+                  suffixIcon:TextButton(onPressed: (){
+                  loginWatch.updateIsShowHide();
+                }, child: const CommonText(data: "Show",)),
                   controller: loginWatch.passwordController,
                   validator: passValidator,),
 

@@ -28,7 +28,9 @@ class _ForgotPaswordState extends State<ForgotPasword> {
               SizedBox(height: 32.h,),
               CommonTextfield(hintText: "New Passeord",),
               SizedBox(height: 16.h,),
-              CommonTextfield(hintText: "Re-Enter Password",suffixText: "Show",),
+              CommonTextfield(hintText: "Re-Enter Password",suffixIcon:TextButton(onPressed: (){
+
+              }, child: CommonText(data: "Show"))),
 
               SizedBox(height: 120.h),
               InkWell(child: CommonButton(data:"Change Paswword"),

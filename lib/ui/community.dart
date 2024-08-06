@@ -12,7 +12,7 @@ class Community extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 20.h,),
-              CommonTextfield(hintText: "Search",width: double.infinity,
+              CommonTextfield(hintText: "Search",
                 prefixIcon: Image.asset("assets/searchicon.png"),
                 suffixIcon: Image.asset("assets/sliders.png"),),
 

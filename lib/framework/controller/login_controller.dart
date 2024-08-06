@@ -9,6 +9,13 @@ class LoginController extends ChangeNotifier {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  bool isShowHide = true;
+
+  updateIsShowHide(){
+    isShowHide = !isShowHide;
+    notifyListeners();
+  }
+
   signInButton(BuildContext context)async{
     if(loginKey.currentState!.validate()){
       print(emailController.text);

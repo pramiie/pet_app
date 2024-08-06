@@ -28,9 +28,12 @@ class _ShopPageState extends State<ShopPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CommonTextfield(hintText: "Search",width: 270.w,
-                    prefixIcon: Image.asset("assets/searchicon.png"),
-                    suffixIcon: Image.asset("assets/sliders.png"),),
+                  Container(
+                width: 270.w,
+                    child: CommonTextfield(hintText: "Search",
+                      prefixIcon: Image.asset("assets/searchicon.png"),
+                      suffixIcon: Image.asset("assets/sliders.png"),),
+                  ),
                 InkWell(
                     onTap: (){
                       Navigator.push(context,
