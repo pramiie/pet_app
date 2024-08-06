@@ -16,7 +16,7 @@ class FireStoreService {
   }
 
 
-  Future<UserModel> getUserFromFirebase()async{
+  Future<UserModel> getUserFromFirebase(String uid)async{
     final uid=FirebaseSingleTon.firebaseSingleTon.firebaseAuth.currentUser!.uid;
     final data =await FirebaseSingleTon.firebaseSingleTon.fireStore.collection('users')
         .doc(uid).get().then((value) => value.data()!);
