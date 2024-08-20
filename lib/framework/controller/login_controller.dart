@@ -1,7 +1,7 @@
-import 'package:pet_app/ui/pet_profile/pet_profile.dart';
-
+import 'package:pet_app/ui/home/home.dart';
 import '../../ui/theme/theme.dart';
 import '../service/firebase_auth_service.dart';
+
 final loginController = ChangeNotifierProvider((ref) => LoginController());
 class LoginController extends ChangeNotifier {
 
@@ -23,7 +23,7 @@ class LoginController extends ChangeNotifier {
       final  response = await FirebaseAuthService.authService.signInWithEmailAndPassword(email:emailController.text, password: passwordController.text);
       if(response.user != null){
         if(context.mounted){
-          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>const PetProfile()), (route) => false);
+          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>const Bnb()), (route) => false);
         }
       }else{
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(response.error!)));
