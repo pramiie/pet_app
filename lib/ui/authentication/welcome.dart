@@ -1,5 +1,5 @@
-import 'package:pet_app/ui/authetication/login.dart';
-import 'package:pet_app/ui/authetication/register.dart';
+import 'package:pet_app/ui/authentication/login.dart';
+import 'package:pet_app/ui/authentication/register.dart';
 import 'package:pet_app/ui/theme/theme.dart';
 import 'package:pet_app/ui/utils/widget/common_button.dart';
 import 'package:pet_app/ui/utils/widget/common_text.dart';

@@ -1,12 +1,12 @@
-import 'package:pet_app/ui/authetication/forgotPass.dart';
-import 'package:pet_app/ui/authetication/register.dart';
-import 'package:pet_app/ui/authetication/splash.dart';
+import 'package:pet_app/ui/authentication/forgotPass.dart';
+import 'package:pet_app/ui/authentication/register.dart';
+import 'package:pet_app/ui/authentication/splash.dart';
 import 'package:pet_app/ui/theme/theme.dart';
 import 'package:pet_app/ui/utils/validator.dart';
 import 'package:pet_app/ui/utils/widget/common_button.dart';
 import 'package:pet_app/ui/utils/widget/common_text.dart';
 import 'package:pet_app/ui/utils/widget/common_textfield.dart';
-import 'package:pet_app/ui/authetication/welcome.dart';
+import 'package:pet_app/ui/authentication/welcome.dart';
 import '../../framework/controller/login_controller.dart';
 
 class Login extends ConsumerWidget {

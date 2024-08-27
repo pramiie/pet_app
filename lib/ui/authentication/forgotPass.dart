@@ -1,4 +1,4 @@
-import 'package:pet_app/ui/authetication/login.dart';
+import 'package:pet_app/ui/authentication/login.dart';
 
 import 'package:pet_app/ui/theme/theme.dart';
 

@@ -1,8 +1,8 @@
 import 'package:pet_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:pet_app/ui/authetication/splash.dart';
+import 'package:pet_app/ui/authentication/splash.dart';
 import 'package:pet_app/ui/theme/theme.dart';
-import 'package:pet_app/ui/authetication/welcome.dart';
+import 'package:pet_app/ui/authentication/welcome.dart';
 
 
 

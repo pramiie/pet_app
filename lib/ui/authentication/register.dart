@@ -1,11 +1,11 @@
 import 'package:pet_app/framework/controller/register_controller.dart';
-import 'package:pet_app/ui/authetication/login.dart';
+import 'package:pet_app/ui/authentication/login.dart';
 import 'package:pet_app/ui/theme/theme.dart';
 import 'package:pet_app/ui/utils/validator.dart';
 import 'package:pet_app/ui/utils/widget/common_button.dart';
 import 'package:pet_app/ui/utils/widget/common_text.dart';
 import 'package:pet_app/ui/utils/widget/common_textfield.dart';
-import 'package:pet_app/ui/authetication/welcome.dart';
+import 'package:pet_app/ui/authentication/welcome.dart';
 
 class Register extends ConsumerWidget {
   const Register({super.key});

@@ -1,5 +1,5 @@
 
-import 'package:pet_app/ui/authetication/login.dart';
+import 'package:pet_app/ui/authentication/login.dart';
 import 'package:pet_app/ui/pet_profile/pet_profile.dart';
 
 import '../../ui/theme/theme.dart';

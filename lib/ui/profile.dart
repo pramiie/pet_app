@@ -1,17 +1,18 @@
 
 import 'package:pet_app/framework/service/firebase_auth_service.dart';
-import 'package:pet_app/ui/authetication/login.dart';
+import 'package:pet_app/ui/alert_dialog.dart';
+import 'package:pet_app/ui/authentication/login.dart';
 import 'package:pet_app/ui/theme/theme.dart';
 import '../framework/controller/pet_Profile_controller.dart';
 import '../framework/model/user_model.dart';
 import '../framework/service/firebase_store_service.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends ConsumerWidget {
   const Profile({super.key});
 
   @override
-  Widget build(BuildContext context) {
-
+  Widget build(BuildContext context,WidgetRef ref) {
+    final profileWatch=ref.watch(petProfileController);
     return Scaffold(
       appBar: AppBar(
         title:const Text('Profile',style: TextStyle(color: Colors.white),),
@@ -31,31 +32,25 @@ class Profile extends StatelessWidget {
                 children: [
                   // Profile Picture
                   Center(
-                    child: InkWell(
-                      onTap: (){
-                      //  profileWatch.pickImageUser(context);
-                        //profileWatch.onNextButtonSubmit(context);
-                      },
-                      child:/* profileWatch.userImage!=null?CircleAvatar(
-                        radius: 65.r,
-                        backgroundImage: FileImage(profileWatch.userImage!),
-                      ):*/ Container(
-                        width: 120.w,
-                        height: 120.h,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(color: const Color(0XFFB12A1C), width: 3.w),
-                        ),
-                        child: Icon(Icons.person_3,color:Color(0XFFB12A1C)),
+                    child: user!.userImg !=null?CircleAvatar(
+                      radius: 65.r,
+                      backgroundImage: NetworkImage(user.userImg.toString()),
+                    ):Container(
+                      width: 120.w,
+                      height: 120.h,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: const Color(0XFFB12A1C), width: 3.w),
                       ),
-                      ),
+                      child: Icon(Icons.person_3,color:Color(0XFFB12A1C)),
+                    ),
                     ),
 
                   SizedBox(height: 20.h),
 
                   // User Name
                   Text(
-                    user!.name??"",
+                    user.name??"",
                     style: TextStyle(
                       fontSize: 24.sp,
                       fontWeight: FontWeight.bold,
@@ -66,7 +61,7 @@ class Profile extends StatelessWidget {
 
                   // User Email
                   Text(
-                    "${user.email}"??"",
+                    "${user.email}",
                     style: TextStyle(
                       fontSize: 16.sp,
                       color: const Color(0xFF888888),
@@ -77,7 +72,15 @@ class Profile extends StatelessWidget {
                   // Edit Profile Button
                   InkWell(
                     onTap: () {
-                      // Add your edit profile logic here
+                      //profileWatch.onEditButtonSubmit(context);
+                      profileWatch.userNameCon.text="${user.name}";
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialogBox();
+                          },
+                        );
+
                     },
                     child:Container(
                       padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 15.h),
@@ -123,4 +126,5 @@ class Profile extends StatelessWidget {
         ),
       ));
   }
+
 }
