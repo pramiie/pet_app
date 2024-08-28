@@ -36,7 +36,8 @@ class _PetProfile2State extends ConsumerState<PetProfile2> {
             SizedBox(height: 60.h,),
             TextButton(
               onPressed: () {
-                // Handle skip action
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>Bnb()));
               },
               child: CommonText(data: "Skip",),
             ),

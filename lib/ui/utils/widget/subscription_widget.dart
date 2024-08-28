@@ -1,22 +1,34 @@
+import 'package:flutter/scheduler.dart';
 import 'package:pet_app/ui/utils/widget/common_button.dart';
 
+import '../../../framework/controller/api_controller.dart';
 import '../../theme/theme.dart';
 
 import 'common_textfield.dart';
 
 
-class SubscriptionWidget extends StatefulWidget {
+class SubscriptionWidget extends ConsumerStatefulWidget {
   const SubscriptionWidget({super.key});
 
   @override
-  State<SubscriptionWidget> createState() => _SubscriptionWidgetState();
+  ConsumerState<SubscriptionWidget> createState() => _SubscriptionWidgetState();
 }
 
-class _SubscriptionWidgetState extends State<SubscriptionWidget> {
+class _SubscriptionWidgetState extends ConsumerState<SubscriptionWidget> {
   int changeButton=1;
-  List listItem=["Ahmedabad","Mumbai","Delhi","Hisar"];
+  String? SelectCity;
+
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      ref.read(cityController).getCity();
+    });
+  }
   @override
   Widget build(BuildContext context) {
+    final cityWatch = ref.watch(cityController);
+    List listItem=cityWatch.cityList as List;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -55,7 +67,7 @@ class _SubscriptionWidgetState extends State<SubscriptionWidget> {
         Stack(
           alignment: Alignment.centerRight,
           children: [
-            CommonTextfield(hintText: "Please Select A Location",),
+            CommonTextfield(hintText: "Please Select A Location",controller: cityWatch.cityController,),
             Positioned(
               bottom: 10,
               child: DropdownButton<String>(
@@ -64,7 +76,9 @@ class _SubscriptionWidgetState extends State<SubscriptionWidget> {
                 icon: Icon(Icons.keyboard_arrow_down,),
                 underline: SizedBox(),
                 onChanged: (String? newValue) {
-                  setState(() {
+                    setState(() {
+                      SelectCity = newValue;
+                      cityWatch.cityController.text = newValue!;
 
                   });
                 },
